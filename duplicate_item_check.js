@@ -8,11 +8,9 @@
   var params = {app:6,query};
   return kintone.api('/k/v1/records','GET', params).then((resp)=>{
     if(!resp.records.length){
-      alert("New Contact Added!");
     }else{
-      record.item_namem.error = 'duplicate item found';
+      record.item_name.error = 'duplicate item found';
       record.seller.error = 'duplicate item found';
-
     }
     return event;
   }).catch((resp)=>{
